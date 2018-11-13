@@ -86,7 +86,7 @@ rest of the day into it.
 1. Click the "File" menu button, then "New Project".
 2. Click "New Directory".
 3. Click "Empty Project".
-4. Type in the name of the directory to store your project, e.g. "r_course". _You should avoid using spaces and fullstops in the project name_.
+4. Type in the name of the directory to store your project, e.g. "r_course". _You should avoid using spaces and full stops in the project name_.
 5. If you are using a teaching cluster machine, choose "Browse" and select `P:\`.  
 6. Click the "Create Project" button.
 
@@ -259,7 +259,7 @@ won't be excuted immediately.
 
 Script files are text files.  By convention they have the extension `.R`.
 
-You can execute the command that the cursor is currently on by pressing <kbd>Ctrl</kbd>+<kbd>Enter</kbd> (the cursor does not have to be at the start of the command, and the command can extend over more than one line, provided a single line does not make a complete command - you will explore this in the challenge below).  
+You can execute the command that the cursor is currently on by pressing <kbd>Ctrl</kbd>+<kbd>Enter</kbd> (the cursor does not have to be at the start of the command, and the command can extend over more than one line, provided a single line does not make a complete command — you will explore this in the challenge below).  
 
 If you have selected some code, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> will execute the selection.
 
@@ -967,7 +967,7 @@ inside the innermost parentheses is evaluated first, and so on.
 
 In this case we've specified that the results of `ls` should be used for the
 `list` argument in `rm`. When assigning values to arguments by name, you *must*
-use the `=` operator, and not `<-`
+use the `=` operator, and not `<-`.
 
 If instead we use `<-`, there will be unintended side effects, or you may get an error message:
 

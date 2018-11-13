@@ -23,7 +23,7 @@ install.packages("tidyverse")
 
 At the `>` prompt in the left hand window of RStudio.   You may be prompted to select a mirror to use; either select one in the UK, or the "cloud" option at the start of the list.
 
-R will download the packages that consitute the tidyverse, and then install them.  This can take some time.  
+R will download the packages that constitute the tidyverse, and then install them.  This can take some time.  
 
 If you are using a mac you may be prompted whether you wish to install binary or source versions of the packages; you should select binary.
 

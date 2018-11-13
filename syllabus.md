@@ -21,7 +21,7 @@ The course covers:
 * Getting help
 * Loading data into R
 * Transforming and cleaning data
-* Ploting data
+* Plotting data
 * Finding and using packages
 * Writing functions
 
