@@ -11,8 +11,9 @@ permalink: /guide/
 * Water
 * "Lecturn" box
 * URL sheet for latecomers (in urlSheet/url.pdf))
+* Microphone 
 
-Load [Zoomit](https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit) beforehand.
+Load [Zoomit](https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit) beforehand. And check it works - may need to force close and restart. 
 
 ## Timing
 
