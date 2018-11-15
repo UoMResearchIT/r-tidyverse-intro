@@ -11,8 +11,9 @@ permalink: /guide/
 * Water
 * "Lecturn" box
 * URL sheet for latecomers (in urlSheet/url.pdf))
+* Microphone 
 
-Load [Zoomit](https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit) beforehand.
+Load [Zoomit](https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit) beforehand. And check it works - may need to force close and restart. 
 
 ## Timing
 
@@ -24,6 +25,15 @@ not).
 ## Helpers
 
 Remind helpers about voice volume when helping learners when teaching is ongoing.
+
+## Macs
+
+Can be troublesome to install tidyverse on macs; some packages require compilation from source.  See [this issue](https://github.com/UoMResearchIT/r-tidyverse-intro/issues/88).  Briefly...
+
+> if you're trying to get tidyverse onto a macOS install of Rstudio, open up a terminal and type in make [this should give further instructions on how to proceed].
+> ... however when I tried xcode-select --install nothing happened (software installer came up, but wasn't doing anything). I ended up going to the Mac App Store and installing Xcode....
+
+Learners are asked in the pre-course emails to ensure that they have the tidyverse installed *before* the course, so it's OK to ask them to use the machine room PC instead.
 
 ## Overall
 
