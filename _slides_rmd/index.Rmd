@@ -49,7 +49,7 @@ Initial tasks:
 ## Research IT
 Described on the [IT Services website](http://www.itservices.manchester.ac.uk/research/)
 
-Announcements given via the [Research IT blog](https://researchitnews.org/) and newsletter (signup via the blog page) and on Twitter [@﻿UoM_eResearch](http://twitter.com/uom_eresearch)
+Announcements given via the [Research IT blog](https://researchitnews.org/) and newsletter (sign up via the blog page) and on Twitter [@﻿UoM_eResearch](http://twitter.com/uom_eresearch)
 
 * [Training courses](http://ri.itservices.manchester.ac.uk/training) teach computing skills for research
 * Advice and guidance about research software

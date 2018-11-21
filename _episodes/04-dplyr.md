@@ -24,7 +24,7 @@ This loads the most commonly used packages in the tidyverse; we used `readr` in 
 
 Let's dive in and look at how we can use the tidyverse to analyse and, in a couple of episodes' time,  plot data from the [gapminder project](https://www.gapminder.org/).  At [the start of the course]({{ page.root}}/02-project-intro), you should have copied the file `gapminder-FiveYearData.csv` to your `data` directory.     Take a look at it using a text editor such as notepad.   The first line contains variable names, and values are separated by commas.  Each record starts on a new line. 
 
-As we did with the [previous episode]({{ page.root }}/03-loading-data-into-R) we use the `read_csv()` function to load data from a comma separated file. Let's make a new script (using the file menu), and load the tidyverse: (in the previous episode we only loaded `readr`; since we'll be using several packages in the tidyverse, we load them all)
+As we did with the [previous episode]({{ page.root }}/03-loading-data-into-R) we use the `read_csv()` function to load data from a comma separated file. Let's make a new script (using the file menu), and load the tidyverse: (in the previous episode we only loaded `readr`; since we'll be using several packages in the tidyverse, we load them all).
 
 
 ~~~
@@ -207,10 +207,10 @@ There are several ways of doing this; the method we will learn about today is us
 
 The pipe operator `%>%` lets us pipe the output of one command into the next.   This allows us to build up a data-processing pipeline.  This approach has several advantages:
 
-* We can build the pipeline piecemeal - building the pipeline step-by-step is easier than trying to 
+* We can build the pipeline piecemeal — building the pipeline step-by-step is easier than trying to 
 perform a complex series of operations in one go
 * It is easy to modify and reuse the pipeline
-* We don't have to make temporary tibbles as the analysis progresses
+* We don't have to make temporary tibbles as the analysis progresses.
 
 > ## Pipelines and the shell
 >
@@ -327,7 +327,7 @@ gapminder_scandinavia <- gapminder %>%
 > {: .language-r}
 >  as a sentence, which we can read as
 > "take the gapminder data *and then* `filter` records where continent == Europe
-> *and then* `select` the year, country and gdpPercap
+> *and then* `select` the year, country and gdpPercap.
 > 
 > We can think of the `filter()` and `select()` functions as verbs in the sentence; 
 > they do things to the data flowing through the pipeline.  
@@ -512,7 +512,7 @@ The dplyr cheat sheet contains many useful functions which can be used with dply
 >
 > Can you reverse the ranking order
 > so that the country with the longest life expectancy gets the lowest rank?
-> Hint: This is similar to sorting in reverse order
+> Hint: This is similar to sorting in reverse order.
 >
 > > ## Solution to challenge 2
 > > 
@@ -565,11 +565,11 @@ The dplyr cheat sheet contains many useful functions which can be used with dply
 > > {: .output}
 > > 
 > > To reverse the order of the ranking, use the `desc` function, i.e.
-> > `mutate(rank = min_rank(desc(lifeExp)))`
+> > `mutate(rank = min_rank(desc(lifeExp)))`.
 > > 
-> > There are several functions for calculating ranks; you may have used, e.g. `dense_rank()`
+> > There are several functions for calculating ranks; you may have used, e.g. `dense_rank()`.
 > > The functions handle ties differently.  The help file for `dplyr`'s ranking functions
-> > explains the differences, and can be accessed with `?ranking`
+> > explains the differences, and can be accessed with `?ranking`.
 > {: .solution}
 {: .challenge}
 
@@ -628,7 +628,7 @@ gapminder %>%
 > ## Aside
 > 
 > In the examples above it would be preferable to calculate the weighted mean (to reflect the different populations of the countries).
-> R can calculate this for us using `weighted.mean(lifeExp, pop)`. For simplicty I've used the regular mean in the above examples.
+> R can calculate this for us using `weighted.mean(lifeExp, pop)`. For simplicity I've used the regular mean in the above examples.
 > 
 {: .callout}
 
@@ -709,7 +709,7 @@ gapminder %>%
 ~~~
 {: .output}
 
-Although we could use the `group_by()`, `n()` and `summarize()` functions to calculate the number of observations in each group, `dplyr` provides the `count()` function which automatically groups the data, calculates the totals and then ungroups it. 
+Although we could use the `group_by()`, `n()` and `summarize()` functions to calculate the number of observations in each group, `dplyr` provides the `count()` function which automatically groups the data, calculates the totals and then un-groups it. 
 
 For instance, if we wanted to check the number of countries included in the
 dataset for the year 2002, we can use:
@@ -768,8 +768,8 @@ gdp_pop_bycontinents_byyear_above25 <- gapminder %>%
 {: .callout}
 ## Other great resources
 
-* [Data Wrangling tutorial](https://suzan.rbind.io/categories/tutorial/) - an excellent four part tutorial covering selecting data, filtering data, summarising and transforming your data.
+* [Data Wrangling tutorial](https://suzan.rbind.io/categories/tutorial/) — an excellent four part tutorial covering selecting data, filtering data, summarising and transforming your data.
 * [R for Data Science](http://r4ds.had.co.nz/)
 * [Data Wrangling Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-* [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) - this is the package vignette.  It can be viewed within R using `vignette(package="dplyr", "dplyr")`
+* [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) — this is the package vignette.  It can be viewed within R using `vignette(package="dplyr", "dplyr")`
 * [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/)

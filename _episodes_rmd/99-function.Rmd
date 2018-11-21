@@ -181,8 +181,8 @@ If you've been writing these functions down into a separate R script , you can l
 source("src/functions-lesson.R")
 ```
 
-It is a good idea to separate your analyis code and the functions it calls into separate files.  You 
-can then `source()` your functions file at the start of your analyis script.
+It is a good idea to separate your analysis code and the functions it calls into separate files.  You 
+can then `source()` your functions file at the start of your analysis script.
 
 
 
@@ -192,7 +192,7 @@ A lot of the "cleverness" of the tidyverse comes from how it handles the values 
 This lets us write code in a very expressive way (for example, the idea of treating the dplyr
 pipelines as a sentence consisting of a series of verbs, with the `%>%` operator being read as "and then".)
 
-Unfortunately this comes at a price when we come to use `dplyr` in our own functions.  The `dplyr` functions use what is known as Non Standard Evaluation; this means that they don't evaluate their parameters in the standard way that the examples in this episode have used so far.  This is probably the most complicted concept we will cover today, so pleae don't worry if you don't "get" it at first attempt. 
+Unfortunately this comes at a price when we come to use `dplyr` in our own functions.  The `dplyr` functions use what is known as Non Standard Evaluation; this means that they don't evaluate their parameters in the standard way that the examples in this episode have used so far.  This is probably the most complicated concept we will cover today, so please don't worry if you don't "get" it at first attempt. 
 
 We'll illustrate this by way of an example.
 

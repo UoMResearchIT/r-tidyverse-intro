@@ -31,10 +31,10 @@ cats_bad <- data.frame(coat = factor(c("calico", "black", "tabby", "tabby")),
 cats <- cats_orig
 ```
 
-One of R's most powerful features is its ability to deal with tabular data -
+One of R's most powerful features is its ability to deal with tabular data —
 such as you may already have in a spreadsheet or a CSV file. 
 
-The [course data]({{ page.root }}/data/r-novice.zip) contains a .csv file
+The [course data]({{ page.root }}/data/r-novice.zip) contains a `.csv` file
 called `feline-data.csv`, which you copied to the `data/` folder when we discussed managing projects in RStudio.
 
 ```{r, eval=FALSE}
@@ -78,7 +78,7 @@ When we enter `cats` by itself on the command line, it will print the contents o
 > value file.  This function is included as part of base R, and performs a similar job 
 > to `read_csv()`.  We will be using `read_csv()` in this course; it is part of the tidyverse,
 > so works well with other parts of the tidyverse, is faster than `read.csv()` and handles 
-> strings in a way that is usually more useful than `read.csv()`
+> strings in a way that is usually more useful than `read.csv()`.
 {: .callout}
 
 > ## Loading other types of data
@@ -108,7 +108,7 @@ Every piece of data in R is stored as either `double`, `integer`, `complex`, `lo
 When we read the data into
 R using `read_csv()` it tries to work out what data type each variable is, which it does by looking at the data contained in the first 1000 rows of the data file.   We can see from the displayed message that `read_csv()` has treated the `coat` variable as a character variable, the `weight` variable as a floating point number and `likes_string` as an integer variable.
 
-This is almost correct; `likes_string` is, however a logical (or boolean) value - the cat either likes string (which is represented in the data file as a `1`, or doesn't (represented by `0`)).  We can specify how we would like `read_csv()` to treat the data in each variable using the `col_types` option; let's tell `read_csv()` to treat `likes_string` as a logical variable:
+This is almost correct; `likes_string` is, however a logical (or boolean) value — the cat either likes string (which is represented in the data file as a `1`, or doesn't (represented by `0`)).  We can specify how we would like `read_csv()` to treat the data in each variable using the `col_types` option; let's tell `read_csv()` to treat `likes_string` as a logical variable:
 
 ```{r}
 cats <- read_csv("data/feline-data.csv", col_types = cols(
@@ -195,7 +195,7 @@ cats[,1]
 > 
 > Tibbles are used to represent tabular data in the tidyverse.  In contrast, base R
 > uses data frames to represent tabular data. One of the differences between these 
-> two types of obbject is *what* is returned when you extract a subset of rows/columns.
+> two types of object is *what* is returned when you extract a subset of rows/columns.
 > In contrast to a tibble, taking a subset of a data frame doesn't always return
 > another data frame. For more details see the callout at the end of this episode.
 {: .callout}
@@ -215,7 +215,7 @@ Another data structure is called a `factor`. Factors usually look like
 character data, but are used to represent categorical information.  We don't handle much
 categorical data in this course, so this session is left for self study.
 
-Let's work with the coat colours of the cats in our dataset
+Let's work with the coat colours of the cats in our dataset:
 
 ```{r}
 catCoats <- cats$coat
@@ -258,7 +258,7 @@ take this idea a step further, and define `coat` as a factor when we load the da
 > Assume that the valid values for the coats variable are black, white, calico and tabby.
 > Read in the cats data, treating the  `coat` variable as a factor with these levels.
 > 
-> Hint: `col_factor()` and its help page may be useful
+> Hint: `col_factor()` and its help page may be useful.
 >
 > > ## Solution to challenge 1
 > >  
@@ -273,9 +273,9 @@ take this idea a step further, and define `coat` as a factor when we load the da
 > >  You may have noticed while reading the help file for `col_factor()` and `parse_factor()` that we can pass
 > > the option `levels = NULL`.  This will cause R to generate the factor levels automatically.  This can be a bad idea,
 > > since invalid data (such as "calic0" in the example above) will get their own factor level.  If, on the other hand
-> > you've got hundereds of possible values,  that's a lot of typing.  
+> > you've got hundreds of possible values,  that's a lot of typing.  
 > >
-> > A compromise between these two approaches is to look at the levels your factor has having loded the data, using the `levels()` function: e.g. `levels(cats$coat)`.  By testing the length of this vector you can check that you have as many factor levels as you expect.
+> > A compromise between these two approaches is to look at the levels your factor has having loaded the data, using the `levels()` function: e.g. `levels(cats$coat)`.  By testing the length of this vector you can check that you have as many factor levels as you expect.
 > >
 > {: .solution}
 {: .challenge}
@@ -305,11 +305,11 @@ on data-analysis, rather than maths and algorithms.   For details of the matrix 
 > R's standard data structure for tabular data is the `data.frame`.  In
 > contrast, `read_csv()` creates a `tibble` (also referred to, for historic
 > reasons, as a `tbl_df`).  This extends the functionality of  a `data.frame`,
-> and can, for the most part, be treated like a `data.frame`
+> and can, for the most part, be treated like a `data.frame`.
 > 
 > You may find that some older functions don't work on tibbles.   A tibble
 > can be converted to a dataframe using `as.data.frame(mytibble)`.  To convert
-> a data frame to a tibble, use `as.tibble(mydataframe)`
+> a data frame to a tibble, use `as.tibble(mydataframe)`.
 > 
 > Tibbles behave more consistently than data frames when subsetting with `[]`; 
 > this will always return another tibble.  This isn't the case when working with 
@@ -326,8 +326,8 @@ on data-analysis, rather than maths and algorithms.   For details of the matrix 
 > * `factor()` will assign factor levels automatically; it does not require us to pass `levels = NULL`.
 > * The automatic levels generated by `factor()` will be alphabetical (rather than according to the order
 > that each level is encountered in `parse_factor()`)
-> * `factor()` does not warn us if we have data that doesn't match any of the levels we have specified
+> * `factor()` does not warn us if we have data that doesn't match any of the levels we have specified.
 > 
 > It is chiefly for the final reason that we recommend using `parse_factor()` instead of `factor()`.  You
-> should be aware that the default ordering of factor levels differs between `factor()` and `parse_factor()`
+> should be aware that the default ordering of factor levels differs between `factor()` and `parse_factor()`.
 {: .callout}

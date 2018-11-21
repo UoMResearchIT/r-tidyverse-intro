@@ -7,7 +7,7 @@ questions:
 - "What are the next steps in learning and using R?"
 objectives:
 - "Describe best practices for writing R and explain the justification for each."
-- "To be aware of additioanl resources for learning R"
+- "To be aware of additional resources for learning R"
 keypoints:
 - "Document what and why, not how."
 - "Break programs into short single-purpose functions."
@@ -104,8 +104,10 @@ There are a huge number of resources for using and learning R online.  Links to 
 * [R weekly](https://rweekly.org/) - a weekly newsletter about R.  This contains links to lots of example uses of R (typically including full source code).  
 * [The John Hopkins Coursera Data Science notes](http://sux13.github.io/DataScienceSpCourseNotes/)
 * [Sheffield University's Exploratory Data Analysis With R notes](http://dzchilds.github.io/aps-data-analysis-L1/) (click the "topics" link in the top right).  
-* [Advanced R, by Hadley Wickham](http://adv-r.had.co.nz/) is particularly useful if you are coming to R from another programming language.  It is focussed on base-R rather than the tidyverse, and is a useful reference on the lower-level aspects of R.
+* [Advanced R, by Hadley Wickham](http://adv-r.had.co.nz/) is particularly useful if you are coming to R from another programming language.  It is focused on base-R rather than the tidyverse, and is a useful reference on the lower-level aspects of R.
 * [Beyond basic R - Introduction and Best Practices](https://owi.usgs.gov/blog/intro-best-practices/) contains useful advice on managing your code and following good programming practice.
+* [ECLR - econometric learning resources](http://eclr.humanities.manchester.ac.uk/index.php/R) is written by colleagues in Social Sciences, and contains many useful examples of using R (although these have an econometics focus, many of the techniques are applicable to other domains).
+
 
 *Please* complete the [course feedback survey](http://bit.ly/2xP95Ef).  The material for the course is modified
 in response to this; if anything was unclear, or we didn't cover anything you thought 

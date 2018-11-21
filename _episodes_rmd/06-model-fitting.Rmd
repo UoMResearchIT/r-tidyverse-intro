@@ -57,7 +57,7 @@ This will fit the model:
 
 $$\mbox{gdpPercap} = x_0 + x_1 \times \mbox{year}$$
 
-We see that, according to the model, the UK's GDP per capita is growing by $400 per year (the gapminder data has GDP in [international dollars](https://en.wikipedia.org/wiki/Geary%E2%80%93Khamis_dollar)).  The intercept gives us the model's prediction of the GPD in year 0.  This doesn't make sense (the gdp has to be >0), and illustrates the perils of extrapolating from your data.   
+We see that, according to the model, the UK's GDP per capita is growing by $400 per year (the gapminder data has GDP in [international dollars](https://en.wikipedia.org/wiki/Geary%E2%80%93Khamis_dollar)).  The intercept gives us the model's prediction of the GDP in year 0.  This doesn't make sense (the GDP has to be >0), and illustrates the perils of extrapolating from your data.   
 
 ## Saving your model
 
@@ -197,7 +197,7 @@ gapminder_uk  %>%
 
 It looks like values towards the centre of our year range are under-estimated, while values at the edges of the range are over estimated.   The plot of the data from challenge 1 suggests suggests that there is some curvature in the data.
 
-We can fit a linear model with a $\mbox{year}^2$ term as follows:
+We can fit a linear model with a year squared term as follows:
 
 ```{r}
 uk_lifeExp_model_squared <- lm(lifeExp ~ year + I(year^2), data=gapminder_uk)
