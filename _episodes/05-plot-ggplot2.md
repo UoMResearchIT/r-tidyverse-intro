@@ -26,7 +26,7 @@ There are three main plotting systems in R,
 the [base plotting system][base], the [lattice][lattice]
 package, and the [ggplot2][ggplot2] package.
 
-[base]: http://www.statmethods.net/graphs/
+[base]: http://www.statmethods.net/graphs/index.html
 [lattice]: http://www.statmethods.net/advgraphs/trellis.html
 [ggplot2]: http://www.statmethods.net/advgraphs/ggplot2.html
 
@@ -485,7 +485,7 @@ x-axis.  If we want plot the y-axis on a log scale we can use the `scale_y_log10
 > > between the difference continents much less obvious.  
 > > 
 > > If we plot the data with a linear scale the inequality is more obvious, but this masks the individual trajectories of
-> > many countries' GDPs . Decisions about how best to plot data are beyond the scope of this course.  Research IT offers a course, [Introduction to data visualisation and analysis](https://app.manchester.ac.uk/rintrovis), which covers this topic in much more detail.
+> > many countries' GDPs. Decisions about how best to plot data are beyond the scope of this course.  Research IT offers a course, [Introduction to data visualisation and analysis](https://app.manchester.ac.uk/rintrovis), which covers this topic in much more detail.
 > > 
 > {: .solution}
 {: .challenge}
@@ -592,7 +592,7 @@ gapminder %>%
 > > This returns a tibble, which we can then pipe into ggplot.
 > {: .solution}
 > 
-> b. Pipe the results of part a into ggplot, to make a density plot of GDP per capita, setting the fill colour by continent (e.g. each continent has its own density estimate)
+> b. Pipe the results of part a into ggplot, to make a density plot of GDP per capita, setting the fill colour by continent (e.g. each continent has its own density estimate).
 > 
 > > ## Solution b
 > > 
@@ -611,7 +611,7 @@ gapminder %>%
 > {: .solution}
 >
 > c. This looks OK, but the continent's density estimates overlay each other.  Use the `alpha =` option to make each density estimate
-> semi transparent
+> semi transparent.
 >
 > > ## Solution c
 > >
@@ -630,7 +630,7 @@ gapminder %>%
 > {: .solution}
 > 
 > d.  Let's take a look at how the relative GDPs per capita have changed over time.  We can use `facet_wrap()` to do  this.  
-> Modify your code to produce a separate graph for each year
+> Modify your code to produce a separate graph for each year.
 >
 >
 > > ## Solution d

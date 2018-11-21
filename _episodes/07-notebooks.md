@@ -44,7 +44,7 @@ Before we go any further, make a new subdirectory for your notebooks, for exampl
 
 We can run the notebook interactively within R Studio.  Press the "Run" button (at the top of the editor window) and choose "Run all" (or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>).   This will execute each chunk of code within R Studio and show us the results of each chunk within the document. This makes it easier to interactively edit our code, look at the results of our analysis, and edit our text within the same environment.
 
-We can preview the notebook by selecting "Preview notebook" from the top of the editor window.  This will render the text and code into an html document.   Note that the preview will use executed chunks of R code in the editor window.  For this reason it is a good idea to choose "Restart R and run all chunks" from the run button (at the top of the editor).  This will ensure your code has been run in order, and that it is self consistent.
+We can preview the notebook by selecting "Preview notebook" from the top of the editor window.  This will render the text and code into an HTML document.   Note that the preview will use executed chunks of R code in the editor window.  For this reason it is a good idea to choose "Restart R and run all chunks" from the run button (at the top of the editor).  This will ensure your code has been run in order, and that it is self consistent.
 
 As an example of using notebooks, let's use the gapminder data, and some of the ideas introduced earlier to run, and to document, an analysis of the data.
 
@@ -101,7 +101,7 @@ You would typically include this in your setup chunk, and use `include=FALSE` so
 > 
 > > ## Solution
 > > 
-> > The solution can be found [here](https://raw.githubusercontent.com/UoMResearchIT/r-tidyverse-intro/gh-pages/notebooks/challenge2.Rmd)
+> > The solution can be found [here](https://raw.githubusercontent.com/UoMResearchIT/r-tidyverse-intro/gh-pages/notebooks/challenge2.Rmd).
 > {: .solution}
 {: .challenge}
 
@@ -195,7 +195,7 @@ Take a look at the [DRYNotebook.Rmd](https://raw.githubusercontent.com/uomresear
 
 We sometimes want to include the output of of statistical analysis (such as the results of the models we
 fitted using `lm()`.  The [`pander`](https://cran.r-project.org/web/packages/pander/index.html) package 
-will add the appropriate markdown formating to many R functions to make them display nicely.  Having installed
+will add the appropriate markdown formatting to many R functions to make them display nicely.  Having installed
 and loaded the `pander` package,  run the `pander()` function on the object you wish to display, e.g.
 
 

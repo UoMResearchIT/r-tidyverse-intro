@@ -51,7 +51,7 @@ There are various ways of finding packages that might be useful in your research
 
 * Journal articles should cite the R packages they used in their analysis. 
 
-* [The Journal of Statistical Software](https://www.jstatsoft.org/index) contains peer-reviewed articles for R packages (and other statistical software)
+* [The Journal of Statistical Software](https://www.jstatsoft.org/index) contains peer-reviewed articles for R packages (and other statistical software).
 
 * [The R Journal](https://journal.r-project.org/) contains articles about new packages in R.
 
@@ -101,7 +101,7 @@ library("tidyverse")
 ~~~
 {: .output}
 
-The tidyverse is a collection of other pacakges that work well together.  The `tidyverse` package's main function is to load some of these other packages.   We will be using some of these later in the course.
+The tidyverse is a collection of other packages that work well together.  The `tidyverse` package's main function is to load some of these other packages.   We will be using some of these later in the course.
 
 > ## Conflicting names
 >
@@ -172,9 +172,9 @@ If a package doesn't have any vignettes, you can usually find help by typing
 > ## Challenge: Vignettes
 > 
 > Vignettes are often useful tutorials.   We will be using the `dplyr` package
-> later in this course, to manipulate tables of data.   List the vignettes availabile 
+> later in this course, to manipulate tables of data.   List the vignettes available 
 > in the package.   You might want to take a look at these now, or later when 
-> we cover `dplyr`
+> we cover `dplyr`.
 > 
 > > ## Solution
 > > 
