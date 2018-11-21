@@ -197,7 +197,7 @@ gapminder_uk  %>%
 
 It looks like values towards the centre of our year range are under-estimated, while values at the edges of the range are over estimated.   The plot of the data from challenge 1 suggests suggests that there is some curvature in the data.
 
-We can fit a linear model with a _year_² term as follows:
+We can fit a linear model with a year squared term as follows:
 
 ```{r}
 uk_lifeExp_model_squared <- lm(lifeExp ~ year + I(year^2), data=gapminder_uk)
