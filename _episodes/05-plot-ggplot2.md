@@ -30,14 +30,14 @@ package, and the [ggplot2][ggplot2] package.
 [lattice]: http://www.statmethods.net/advgraphs/trellis.html
 [ggplot2]: http://www.statmethods.net/advgraphs/ggplot2.html
 
-Today we'll be learning about the ggplot2 package, which is part of the tidyverse.  It is the most effective for creating 
+Today we'll be learning about the ggplot2 package, which is part of the tidyverse.  It is the most effective for creating
 publication quality graphics. There are many extension packages for ggplot2, which make it easy to produce specialised types of
 graph, such as survival plots, geographic maps and ROC curves.
 
 ggplot2 is built on the grammar of graphics, the idea that any plot can be
 expressed from the same set of components: a **data** set, a
 **coordinate system**, and a set of **geoms**--the visual representation of data
-points.    
+points.
 
 The key to understanding ggplot2 is thinking about a figure in layers.
 This idea may be familiar to you if you have used image editing programs like Photoshop, Illustrator, or
@@ -66,7 +66,7 @@ earlier. For the second argument we passed in the `aes` function, which
 tells `ggplot` how variables in the **data** map to *aesthetic* properties of
 the figure, in this case the **x** and **y** locations. Here we told `ggplot` we
 want to plot the "gdpPercap" column of the gapminder data frame on the x-axis, and
-the "lifeExp" column on the y-axis. 
+the "lifeExp" column on the y-axis.
 
 By itself, the call to `ggplot` isn't enough to draw a figure:
 
@@ -94,7 +94,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 ## Combining `dplyr` and `ggplot2`
 
-As `gplot2` is part of the tidyverse, we can use it with pipes.  As we will see later in the 
+As `gplot2` is part of the tidyverse, we can use it with pipes.  As we will see later in the
 episode, this will be particularly useful if we need to modify the data before plotting it.
 
 We can repeat the above plot, using a pipe, as follows:
@@ -111,7 +111,7 @@ Note that the `ggplot2` commands are joined by the `+` symbol and not the `%>%` 
 > ## Challenge 1
 >
 > Modify the example so that the figure shows how life expectancy has
-> changed over time.  Note that using points to show this data isn't the 
+> changed over time.  Note that using points to show this data isn't the
 > most effective way of presenting it; we will look at other ways of showing
 > the data shortly.
 >
@@ -177,8 +177,8 @@ gapminder %>%  ggplot(aes(x = year, y = lifeExp, colour = continent )) + geom_li
 
 <img src="../fig/rmd-06-badline-1.png" title="plot of chunk badline" alt="plot of chunk badline" style="display: block; margin: auto;" />
 
-This probably isn't what you were expecting.   We need to modify the aesthetic to tell 
-ggplot that each country's data should be a separate line.   By default, `geom_point()` 
+This probably isn't what you were expecting.   We need to modify the aesthetic to tell
+ggplot that each country's data should be a separate line.   By default, `geom_point()`
 joins all our observations together, sorting them in order of the variable we're plotting
 on the x axis.   To generate a separate line for each country, we use the `group` aesthetic:
 
@@ -220,7 +220,7 @@ gapminder %>% ggplot(aes(x = year, y = lifeExp, group = country)) +
 
 <img src="../fig/rmd-06-lifeExp-line-point2-1.png" title="plot of chunk lifeExp-line-point2" alt="plot of chunk lifeExp-line-point2" style="display: block; margin: auto;" />
 
-If we apply the aesthetic `aes(colour=continent)` to `geom_line()`, the (lack of) mapping of colour 
+If we apply the aesthetic `aes(colour=continent)` to `geom_line()`, the (lack of) mapping of colour
 is overridden by the new aesthetic.  The points' colours are unchanged:
 
 ~~~
@@ -232,12 +232,12 @@ gapminder %>% ggplot(aes(x = year, y = lifeExp, group = country)) +
 <img src="../fig/rmd-06-lifeExp-line-point3-1.png" title="plot of chunk lifeExp-line-point3" alt="plot of chunk lifeExp-line-point3" style="display: block; margin: auto;" />
 
 What if we want to print our points in a colour other than the default black?  Aesthetics map
-data to a property of the graph.  If we want to change the colour of all our points, we are not using 
+data to a property of the graph.  If we want to change the colour of all our points, we are not using
 the data to specify the colour, so we specify the colour directly in the geom:
 
 
 ~~~
-gapminder %>% 
+gapminder %>%
   ggplot(aes(x = year, y = lifeExp, group = country)) +
   geom_line(aes(colour = continent)) +
   geom_point(colour = "red")
@@ -252,10 +252,10 @@ of our `geom_line()` and `geom_point()`, the points appear **behind** the lines:
 
 
 ~~~
-gapminder %>% 
+gapminder %>%
   ggplot(aes(x = year, y = lifeExp, group = country)) +
-  geom_point(colour = "red") + 
-  geom_line(aes(colour = continent)) 
+  geom_point(colour = "red") +
+  geom_line(aes(colour = continent))
 ~~~
 {: .language-r}
 
@@ -271,7 +271,7 @@ gapminder %>%
 ## Multi-panel figures
 
 There's still a lot going on in this graph.  It may clearer if we plotted a separate graph
-for each continent. We can split the plot into  multiple panels by adding a layer of **facet** panels: 
+for each continent. We can split the plot into  multiple panels by adding a layer of **facet** panels:
 
 
 ~~~
@@ -288,13 +288,13 @@ information.  Note that the variable we are faceting by needs to be placed in qu
 
 > ## More on faceting
 > 
-> It's also possible to facet by one or two variables on a grid, using the `facet_grid()` function.  For example, we could plot life GDP per capita's relationship to life expectancy for each combination of continent and year 
+> It's also possible to facet by one or two variables on a grid, using the `facet_grid()` function.  For example, we could plot life GDP per capita's relationship to life expectancy for each combination of continent and year
 > using the following code:
 > 
 > 
 > ~~~
-> gapminder %>% 
->   ggplot(aes(x=lifeExp, y=gdpPercap)) + geom_point(size=0.3) + 
+> gapminder %>%
+>   ggplot(aes(x=lifeExp, y=gdpPercap)) + geom_point(size=0.3) +
 >   facet_grid(continent ~ year)
 > ~~~
 > {: .language-r}
@@ -319,8 +319,8 @@ information.  Note that the variable we are faceting by needs to be placed in qu
 > > 
 > > 
 > > ~~~
-> > gapminder %>% 
-> >   ggplot(aes(x = year, y = gdpPercap, group = country, colour = continent)) + 
+> > gapminder %>%
+> >   ggplot(aes(x = year, y = gdpPercap, group = country, colour = continent)) +
 > >   geom_line()
 > > ~~~
 > > {: .language-r}
@@ -331,7 +331,7 @@ information.  Note that the variable we are faceting by needs to be placed in qu
 > > 
 > > 
 > > ~~~
-> > gapminder %>% 
+> > gapminder %>%
 > >   ggplot(aes(x = year, y = gdpPercap, group = country)) +
 > >   geom_line() +
 > >   facet_wrap("continent")
@@ -340,7 +340,7 @@ information.  Note that the variable we are faceting by needs to be placed in qu
 > > 
 > > <img src="../fig/rmd-06-unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" />
 > > 
-> > This representation of the data is arguably clearer.  Neither graph is ideal though; the huge range of 
+> > This representation of the data is arguably clearer.  Neither graph is ideal though; the huge range of
 > > GDPs per capita makes it difficult to show the data on the same graph.  We will look at transforming the scales of our axes
 > > shortly.
 > > 
@@ -359,9 +359,9 @@ information.  Note that the variable we are faceting by needs to be placed in qu
 > 
 > 
 > ~~~
-> gapminder %>% 
+> gapminder %>%
 >   ggplot(aes(x = year, y = gdpPercap, group = country, label = country)) +
->   geom_line() + 
+>   geom_line() +
 >   geom_text() +
 >   facet_wrap("continent")
 > ~~~
@@ -373,7 +373,7 @@ information.  Note that the variable we are faceting by needs to be placed in qu
 > 
 > The labels for each data point overlap each other, and are plotted for each data point.  You can deal with the latter issue by creating a new variable which only contains the label for one point per group (i.e per country), and for the groups you wish to label.  You can do this using `mutate` and `ifelse` as described at the end of the previous episode.
 > 
-> It's also possible to make a graph with "tooltips", so that the country pops up when you hover the mouse over a line.  `ggplot2` can't do this automatically, but an extension package [ggiraph`](https://davidgohel.github.io/ggiraph/index.html) provides this functionality.  The package's documentation has full examples.  
+> It's also possible to make a graph with "tooltips", so that the country pops up when you hover the mouse over a line.  `ggplot2` can't do this automatically, but an extension package [ggiraph`](https://davidgohel.github.io/ggiraph/index.html) provides this functionality.  The package's documentation has full examples.
 > 
 {: .callout}
 
@@ -388,8 +388,8 @@ For example, if we wanted to produce a version of the graph in challenge 3, but 
 
 
 ~~~
-gapminder %>% 
-  filter(continent == "Americas") %>% 
+gapminder %>%
+  filter(continent == "Americas") %>%
   ggplot(aes(x = year, y = gdpPercap, group = country)) +
   geom_line() +
   facet_wrap("continent")
@@ -401,7 +401,7 @@ gapminder %>%
 
 > ## Challenge 4
 > 
-> Rather than plotting the life expectancy of each country over time, make a plot showing the average life expectancy in each continent over time.   
+> Rather than plotting the life expectancy of each country over time, make a plot showing the average life expectancy in each continent over time.
 > 
 > Hint - Challenge 3 of the [previous episode](../04-dplyr) may be useful.  This can then be piped into a ggplot command.
 > 
@@ -409,13 +409,20 @@ gapminder %>%
 > > 
 > > 
 > > ~~~
-> > gapminder %>% 
-> >   group_by(continent, year) %>% 
-> >   summarise(mean_lifeExp = mean(lifeExp)) %>% 
+> > gapminder %>%
+> >   group_by(continent, year) %>%
+> >   summarise(mean_lifeExp = mean(lifeExp)) %>%
 > >   ggplot(aes(x = year, y=mean_lifeExp, colour = continent)) +
 > >   geom_line()
 > > ~~~
 > > {: .language-r}
+> > 
+> > 
+> > 
+> > ~~~
+> > `summarise()` has grouped output by 'continent'. You can override using the `.groups` argument.
+> > ~~~
+> > {: .output}
 > > 
 > > <img src="../fig/rmd-06-unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" />
 > > 
@@ -424,7 +431,7 @@ gapminder %>%
 
 
 
-## Transformations 
+## Transformations
 
 Ggplot also makes it easy to transform axes, to better show our data.  To
 demonstrate we'll go back to our first example:
@@ -461,7 +468,7 @@ of 1,000 is now 3 on the x axis, a value of 10,000 corresponds to 4 on the x-
 axis and so on. This makes it easier to visualize the spread of data on the
 x-axis.  If we want plot the y-axis on a log scale we can use the `scale_y_log10` function.
 
-> ## Challenge 5 
+> ## Challenge 5
 > 
 > Modify the faceted plot you produced in challenge 3 to show GDP per capita on a log scale.
 > 
@@ -471,10 +478,10 @@ x-axis.  If we want plot the y-axis on a log scale we can use the `scale_y_log10
 > > 
 > > 
 > > ~~~
-> > gapminder %>% 
+> > gapminder %>%
 > >   ggplot(aes(x = year, y = gdpPercap, group = country)) +
 > >   geom_line() +
-> >   facet_wrap("continent") + 
+> >   facet_wrap("continent") +
 > >   scale_y_log10()
 > > ~~~
 > > {: .language-r}
@@ -482,7 +489,7 @@ x-axis.  If we want plot the y-axis on a log scale we can use the `scale_y_log10
 > > <img src="../fig/rmd-06-unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" style="display: block; margin: auto;" />
 > > 
 > > Although this makes it easier to visualise all of the data on a single plot, it makes the inequality in GDP per capita
-> > between the difference continents much less obvious.  
+> > between the difference continents much less obvious.
 > > 
 > > If we plot the data with a linear scale the inequality is more obvious, but this masks the individual trajectories of
 > > many countries' GDPs. Decisions about how best to plot data are beyond the scope of this course.  Research IT offers a course, [Introduction to data visualisation and analysis](https://app.manchester.ac.uk/rintrovis), which covers this topic in much more detail.
@@ -499,7 +506,7 @@ continent we can use:
 
 ~~~
 gapminder %>% filter(year == 2007) %>%
-  ggplot(aes(x=continent)) + 
+  ggplot(aes(x=continent)) +
   geom_bar()
 ~~~
 {: .language-r}
@@ -508,14 +515,14 @@ gapminder %>% filter(year == 2007) %>%
 
 We filter to a single year of data to avoid multiple counting
 
-We often wish to explore the distribution of a continuous variable.  We can do this using a histogram (`geom_histogram()`), 
+We often wish to explore the distribution of a continuous variable.  We can do this using a histogram (`geom_histogram()`),
 or a density plot (`geom_density()`)
 
 For example, to produce a histogram of GDPs per capita for countries in Europe in 2007:
 
 
 ~~~
-gapminder %>% filter(year == 2007, continent == "Europe") %>% 
+gapminder %>% filter(year == 2007, continent == "Europe") %>%
   ggplot(aes(x=gdpPercap)) + geom_histogram(bins = 10)
 ~~~
 {: .language-r}
@@ -528,10 +535,10 @@ We can plot a density plot using `geom_density()`.  This is a smoothed version o
 
 
 ~~~
-gapminder %>% 
-  filter(year == 2007, continent == "Europe") %>% 
-  ggplot(aes(x = gdpPercap)) + 
-  geom_density() 
+gapminder %>%
+  filter(year == 2007, continent == "Europe") %>%
+  ggplot(aes(x = gdpPercap)) +
+  geom_density()
 ~~~
 {: .language-r}
 
@@ -543,17 +550,17 @@ passed in the aesthetic (e.g. `aes(x = gdpPercap, fill = ...))`) to fill accordi
 
 
 ~~~
-gapminder %>% 
-  filter(year == 2007, continent == "Europe") %>% 
-  ggplot(aes(x = gdpPercap)) + 
-  geom_density(fill = "red", colour="blue") 
+gapminder %>%
+  filter(year == 2007, continent == "Europe") %>%
+  ggplot(aes(x = gdpPercap)) +
+  geom_density(fill = "red", colour="blue")
 ~~~
 {: .language-r}
 
 <img src="../fig/rmd-06-unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" style="display: block; margin: auto;" />
 
 > ## Challenge 6
-> 
+>
 > In this challenge, we'll extend the plot above to compare the distributions of GDP per capita in Europe and Africa over time.
 > As the challenge is quite long, it's broken down into sections.  Please try each section
 > before looking at the answer.
@@ -561,11 +568,11 @@ gapminder %>%
 > a.  We'll start off by plotting the data for a single year, before extending the plot for multiple years.  Using the code above as a starting point, write some code to return a tibble containing the data for Europe and Africa in 2007.  Hint: the `%in%` operator may be useful.
 >
 > > ## Solution a
-> > 
+> >
 > > 
 > > ~~~
-> > gapminder %>% 
-> >   filter(year == 2007) %>% 
+> > gapminder %>%
+> >   filter(year == 2007) %>%
 > >   filter(continent %in% c("Europe", "Africa"))
 > > ~~~
 > > {: .language-r}
@@ -575,7 +582,7 @@ gapminder %>%
 > > ~~~
 > > # A tibble: 82 x 6
 > >    country                 year      pop continent lifeExp gdpPercap
-> >    <chr>                  <int>    <dbl> <chr>       <dbl>     <dbl>
+> >    <chr>                  <dbl>    <dbl> <chr>       <dbl>     <dbl>
 > >  1 Albania                 2007  3600523 Europe       76.4     5937.
 > >  2 Algeria                 2007 33333216 Africa       72.3     6223.
 > >  3 Angola                  2007 12420476 Africa       42.7     4797.
@@ -586,21 +593,21 @@ gapminder %>%
 > >  8 Botswana                2007  1639131 Africa       50.7    12570.
 > >  9 Bulgaria                2007  7322858 Europe       73.0    10681.
 > > 10 Burkina Faso            2007 14326203 Africa       52.3     1217.
-> > # ... with 72 more rows
+> > # … with 72 more rows
 > > ~~~
 > > {: .output}
 > > This returns a tibble, which we can then pipe into ggplot.
 > {: .solution}
-> 
+>
 > b. Pipe the results of part a into ggplot, to make a density plot of GDP per capita, setting the fill colour by continent (e.g. each continent has its own density estimate).
-> 
+>
 > > ## Solution b
-> > 
+> >
 > > 
 > > ~~~
-> > gapminder %>% 
-> >   filter(year == 2007) %>% 
-> >   filter(continent %in% c("Europe", "Africa")) %>% 
+> > gapminder %>%
+> >   filter(year == 2007) %>%
+> >   filter(continent %in% c("Europe", "Africa")) %>%
 > >   ggplot(aes(x = gdpPercap, fill = continent)) +
 > >   geom_density()
 > > ~~~
@@ -617,19 +624,19 @@ gapminder %>%
 > >
 > > 
 > > ~~~
-> > gapminder %>% 
-> >   filter(year == 2007) %>% 
-> >   filter(continent %in% c("Europe", "Africa")) %>% 
+> > gapminder %>%
+> >   filter(year == 2007) %>%
+> >   filter(continent %in% c("Europe", "Africa")) %>%
 > >   ggplot(aes(x = gdpPercap, fill = continent)) +
-> >   geom_density(alpha = 0.5) 
+> >   geom_density(alpha = 0.5)
 > > ~~~
 > > {: .language-r}
 > > 
 > > <img src="../fig/rmd-06-unnamed-chunk-18-1.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" style="display: block; margin: auto;" />
-> > 
+> >
 > {: .solution}
-> 
-> d.  Let's take a look at how the relative GDPs per capita have changed over time.  We can use `facet_wrap()` to do  this.  
+>
+> d.  Let's take a look at how the relative GDPs per capita have changed over time.  We can use `facet_wrap()` to do  this.
 > Modify your code to produce a separate graph for each year.
 >
 >
@@ -637,8 +644,8 @@ gapminder %>%
 > >
 > > 
 > > ~~~
-> > gapminder %>% 
-> >   filter(continent %in% c("Europe", "Africa")) %>% 
+> > gapminder %>%
+> >   filter(continent %in% c("Europe", "Africa")) %>%
 > >   ggplot(aes(x = gdpPercap, fill = continent)) +
 > >   geom_density(alpha = 0.5) +
 > >   facet_wrap("year")
@@ -650,33 +657,33 @@ gapminder %>%
 > >
 > {: .solution}
 {: .challenge}
-  
+
 
 ## Modifying text
 
 To clean this figure up for a publication we need to change some of the text
-elements.  For example the axis labels should be "human readable" rather than 
+elements.  For example the axis labels should be "human readable" rather than
 the variable name from the data-set.  We may also wish to change the text size, etc.
 
 We can do this by adding a couple of different layers. The **theme** layer
-controls the axis text, and overall text size. Labels for the axes, plot 
+controls the axis text, and overall text size. Labels for the axes, plot
 title and any legend can be set using the `labs` function. Legend titles
-are set using the same names we used in the `aes` specification; since we used the `fill` property to 
-colour by continent we use `fill = "Continent` in the `labs()` function.  
+are set using the same names we used in the `aes` specification; since we used the `fill` property to
+colour by continent we use `fill = "Continent` in the `labs()` function.
 
 
 ~~~
-gapminder %>% 
-  filter(continent %in% c("Europe", "Africa")) %>% 
+gapminder %>%
+  filter(continent %in% c("Europe", "Africa")) %>%
   ggplot(aes(x = gdpPercap, fill = continent)) +
   geom_density(alpha = 0.5) +
-  facet_wrap("year") + 
+  facet_wrap("year") +
   labs(
     x = "GDP per capita", # x axis title
     y = "Density",   # y axis title
     title = "Figure 1",      # main title of figure
     fill = "Continent"      # title of legend
-  ) 
+  )
 ~~~
 {: .language-r}
 
@@ -693,7 +700,7 @@ extensive documentation is available on the [ggplot2 website][ggplot-doc].
 
 Having produced a plot, we can save it, or copy it to the clipboard using the "Export" command at the top of RStudio's plot window.
 
-It's a better idea to save your plots as part of your scripts; this way if you modify your analysis code, you _know_ the plot will reflect the results of the code.  If you manually save the plot, you have to remember to do this after changing the script.  
+It's a better idea to save your plots as part of your scripts; this way if you modify your analysis code, you _know_ the plot will reflect the results of the code.  If you manually save the plot, you have to remember to do this after changing the script.
 
 We can save the most recently produced ggplot using the `ggsave()` function:
 
@@ -709,11 +716,11 @@ The help for the `ggsave()` function lists the image formats that are available,
 
 ## ggplot themes and extensions
 
-ggplot is very flexible, and its capabilities can be extended.  
+ggplot is very flexible, and its capabilities can be extended.
 
-The _theme_ of a plot affects the background, axes etc.  The [ggplot2 themes package](https://cran.r-project.org/web/packages/ggthemes/) contains many useful (and not so useful) themes we can apply to our data.  The [cowplot package](https://cran.r-project.org/web/packages/cowplot/index.html) makes it easy to plot sub-plots, and to overlay plots within plots.  
+The _theme_ of a plot affects the background, axes etc.  The [ggplot2 themes package](https://cran.r-project.org/web/packages/ggthemes/) contains many useful (and not so useful) themes we can apply to our data.  The [cowplot package](https://cran.r-project.org/web/packages/cowplot/index.html) makes it easy to plot sub-plots, and to overlay plots within plots.
 
-The [ggplot2 exensions](http://www.ggplot2-exts.org/) pages lists R packages that can extend its capabilities. If you have a specialised plotting need (for example plotting ROC curves, survival data, or time series) there are packages that will allow you to make these plots with minimal effort. [The top 50 ggplot2 visualisations page](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) provides examples (with full code) of almost any type of graph you might want to make. 
+The [ggplot2 exensions](https://exts.ggplot2.tidyverse.org/) pages lists R packages that can extend its capabilities. If you have a specialised plotting need (for example plotting ROC curves, survival data, or time series) there are packages that will allow you to make these plots with minimal effort. [The top 50 ggplot2 visualisations page](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) provides examples (with full code) of almost any type of graph you might want to make.
 
 As an example of how easy it can be to extend ggplot, we will use the `ggridges` plot to produce a stacked density plot, to better visualise the previous figure:
 
@@ -722,10 +729,10 @@ As an example of how easy it can be to extend ggplot, we will use the `ggridges`
 
 ~~~
 library(ggridges)
-gapminder %>% 
-  filter(continent %in% c("Europe", "Africa")) %>% 
+gapminder %>%
+  filter(continent %in% c("Europe", "Africa")) %>%
   ggplot(aes(x = gdpPercap, y = factor(year), fill = continent)) +
-  geom_density_ridges(alpha = 0.5) 
+  geom_density_ridges(alpha = 0.5)
 ~~~
 {: .language-r}
 
