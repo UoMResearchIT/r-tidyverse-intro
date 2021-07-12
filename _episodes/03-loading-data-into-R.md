@@ -54,11 +54,12 @@ cats <- read_csv(file = "data/feline-data.csv")
 
 
 ~~~
-Parsed with column specification:
+
+── Column specification ────────────────────────────────────────────────────────
 cols(
   coat = col_character(),
   weight = col_double(),
-  likes_string = col_integer()
+  likes_string = col_double()
 )
 ~~~
 {: .output}
@@ -76,7 +77,7 @@ cats
 ~~~
 # A tibble: 3 x 3
   coat   weight likes_string
-  <chr>   <dbl>        <int>
+  <chr>   <dbl>        <dbl>
 1 calico    2.1            1
 2 black     5              0
 3 tabby     3.2            1
@@ -119,7 +120,7 @@ Every piece of data in R is stored as either `double`, `integer`, `complex`, `lo
 - `character` variables can store strings of characters.
 
 When we read the data into
-R using `read_csv()` it tries to work out what data type each variable is, which it does by looking at the data contained in the first 1000 rows of the data file.   We can see from the displayed message that `read_csv()` has treated the `coat` variable as a character variable, the `weight` variable as a floating point number and `likes_string` as an integer variable.
+R using `read_csv()` it tries to work out what data type each variable is, which it does by looking at the data contained in the first 1000 rows of the data file.   We can see from the displayed message that `read_csv()` has treated the `coat` variable as a character variable, the `weight` variable as a floating point number and `likes_string` as an double variable.
 
 This is almost correct; `likes_string` is, however a logical (or boolean) value — the cat either likes string (which is represented in the data file as a `1`, or doesn't (represented by `0`)).  We can specify how we would like `read_csv()` to treat the data in each variable using the `col_types` option; let's tell `read_csv()` to treat `likes_string` as a logical variable:
 
@@ -171,16 +172,9 @@ cats2 <- read_csv("data/feline-data_v2.csv", col_types = cols(
 
 
 ~~~
-Warning in rbind(names(probs), probs_f): number of columns of result is not
-a multiple of vector length (arg 2)
-~~~
-{: .error}
-
-
-
-~~~
 Warning: 1 parsing failure.
-row # A tibble: 1 x 5 col     row col    expected               actual    file                      expected   <int> <chr>  <chr>                  <chr>     <chr>                     actual 1     4 weight no trailing characters " or 2.4" 'data/feline-data_v2.csv' file # A tibble: 1 x 5
+row    col               expected     actual                      file
+  4 weight no trailing characters 2.3 or 2.4 'data/feline-data_v2.csv'
 ~~~
 {: .error}
 
@@ -394,7 +388,8 @@ parse_factor(catCoats2, levels = validCoatColours)
 
 ~~~
 Warning: 1 parsing failure.
-row # A tibble: 1 x 4 col     row   col expected           actual expected   <int> <int> <chr>              <chr>  actual 1     1    NA value in level set calic0
+row col           expected actual
+  1  -- value in level set calic0
 ~~~
 {: .error}
 
