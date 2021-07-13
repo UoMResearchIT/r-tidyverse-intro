@@ -35,24 +35,24 @@ library("tidyverse")
 
 
 ~~~
-── Attaching packages ────────────────────────────────── tidyverse 1.2.1 ──
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
 ~~~
 {: .output}
 
 
 
 ~~~
-✔ ggplot2 3.0.0     ✔ purrr   0.2.5
-✔ tibble  1.4.2     ✔ dplyr   0.7.6
-✔ tidyr   0.8.1     ✔ stringr 1.3.1
-✔ readr   1.1.1     ✔ forcats 0.3.0
+✔ ggplot2 3.3.5     ✔ purrr   0.3.4
+✔ tibble  3.1.2     ✔ dplyr   1.0.7
+✔ tidyr   1.1.3     ✔ stringr 1.4.0
+✔ readr   1.4.0     ✔ forcats 0.5.1
 ~~~
 {: .output}
 
 
 
 ~~~
-── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ~~~
@@ -68,10 +68,11 @@ gapminder <- read_csv("./data/gapminder-FiveYearData.csv")
 
 
 ~~~
-Parsed with column specification:
+
+── Column specification ────────────────────────────────────────────────────────
 cols(
   country = col_character(),
-  year = col_integer(),
+  year = col_double(),
   pop = col_double(),
   continent = col_character(),
   lifeExp = col_double(),
@@ -148,7 +149,7 @@ print(year_country_gdp)
 ~~~
 # A tibble: 1,704 x 3
     year country     gdpPercap
-   <int> <chr>           <dbl>
+   <dbl> <chr>           <dbl>
  1  1952 Afghanistan      779.
  2  1957 Afghanistan      821.
  3  1962 Afghanistan      853.
@@ -159,7 +160,7 @@ print(year_country_gdp)
  8  1987 Afghanistan      852.
  9  1992 Afghanistan      649.
 10  1997 Afghanistan      635.
-# ... with 1,694 more rows
+# … with 1,694 more rows
 ~~~
 {: .output}
 
@@ -182,7 +183,7 @@ print(gapminder_Europe)
 ~~~
 # A tibble: 360 x 6
    country  year     pop continent lifeExp gdpPercap
-   <chr>   <int>   <dbl> <chr>       <dbl>     <dbl>
+   <chr>   <dbl>   <dbl> <chr>       <dbl>     <dbl>
  1 Albania  1952 1282697 Europe       55.2     1601.
  2 Albania  1957 1476505 Europe       59.3     1942.
  3 Albania  1962 1728137 Europe       64.8     2313.
@@ -193,7 +194,7 @@ print(gapminder_Europe)
  8 Albania  1987 3075321 Europe       72       3739.
  9 Albania  1992 3326498 Europe       71.6     2497.
 10 Albania  1997 3428038 Europe       73.0     3193.
-# ... with 350 more rows
+# … with 350 more rows
 ~~~
 {: .output}
 
@@ -248,7 +249,7 @@ print(year_country_gdp)
 ~~~
 # A tibble: 1,704 x 3
     year country     gdpPercap
-   <int> <chr>           <dbl>
+   <dbl> <chr>           <dbl>
  1  1952 Afghanistan      779.
  2  1957 Afghanistan      821.
  3  1962 Afghanistan      853.
@@ -259,7 +260,7 @@ print(year_country_gdp)
  8  1987 Afghanistan      852.
  9  1992 Afghanistan      649.
 10  1997 Afghanistan      635.
-# ... with 1,694 more rows
+# … with 1,694 more rows
 ~~~
 {: .output}
 
@@ -286,7 +287,7 @@ print(year_country_gdp_euro)
 ~~~
 # A tibble: 360 x 3
     year country gdpPercap
-   <int> <chr>       <dbl>
+   <dbl> <chr>       <dbl>
  1  1952 Albania     1601.
  2  1957 Albania     1942.
  3  1962 Albania     2313.
@@ -297,7 +298,7 @@ print(year_country_gdp_euro)
  8  1987 Albania     3739.
  9  1992 Albania     2497.
 10  1997 Albania     3193.
-# ... with 350 more rows
+# … with 350 more rows
 ~~~
 {: .output}
 
@@ -412,7 +413,7 @@ gapminder %>%
 ~~~
 # A tibble: 30 x 6
    country                 year     pop continent lifeExp gdpPercap
-   <chr>                  <int>   <dbl> <chr>       <dbl>     <dbl>
+   <chr>                  <dbl>   <dbl> <chr>       <dbl>     <dbl>
  1 Iceland                 2007  301931 Europe       81.8    36181.
  2 Montenegro              2007  684736 Europe       74.5     9254.
  3 Slovenia                2007 2009245 Europe       77.9    25768.
@@ -423,7 +424,7 @@ gapminder %>%
  8 Norway                  2007 4627926 Europe       80.2    49357.
  9 Finland                 2007 5238460 Europe       79.3    33207.
 10 Slovak Republic         2007 5447502 Europe       74.7    18678.
-# ... with 20 more rows
+# … with 20 more rows
 ~~~
 {: .output}
 We can use the `desc()` function to sort a variable in reverse order:
@@ -441,7 +442,7 @@ gapminder %>%
 ~~~
 # A tibble: 30 x 6
    country         year      pop continent lifeExp gdpPercap
-   <chr>          <int>    <dbl> <chr>       <dbl>     <dbl>
+   <chr>          <dbl>    <dbl> <chr>       <dbl>     <dbl>
  1 Germany         2007 82400996 Europe       79.4    32170.
  2 Turkey          2007 71158647 Europe       71.8     8458.
  3 France          2007 61083916 Europe       80.7    30470.
@@ -452,7 +453,7 @@ gapminder %>%
  8 Romania         2007 22276056 Europe       72.5    10808.
  9 Netherlands     2007 16570613 Europe       79.8    36798.
 10 Greece          2007 10706290 Europe       79.5    27538.
-# ... with 20 more rows
+# … with 20 more rows
 ~~~
 {: .output}
 
@@ -483,7 +484,7 @@ gapminder %>%
 ~~~
 # A tibble: 1,704 x 7
    country      year      pop continent lifeExp gdpPercap logGdpPercap
-   <chr>       <int>    <dbl> <chr>       <dbl>     <dbl>        <dbl>
+   <chr>       <dbl>    <dbl> <chr>       <dbl>     <dbl>        <dbl>
  1 Afghanistan  1952  8425333 Asia         28.8      779.         6.66
  2 Afghanistan  1957  9240934 Asia         30.3      821.         6.71
  3 Afghanistan  1962 10267083 Asia         32.0      853.         6.75
@@ -494,7 +495,7 @@ gapminder %>%
  8 Afghanistan  1987 13867957 Asia         40.8      852.         6.75
  9 Afghanistan  1992 16317921 Asia         41.7      649.         6.48
 10 Afghanistan  1997 22227415 Asia         41.8      635.         6.45
-# ... with 1,694 more rows
+# … with 1,694 more rows
 ~~~
 {: .output}
 
@@ -650,6 +651,19 @@ gapminder %>%
 > > lifeExp_bycontinentyear <- gapminder %>% 
 > >    group_by(continent, year) %>% 
 > >   summarise(mean_lifeExp = mean(lifeExp))
+> >~~~
+> >{: .language-r}
+> >
+> >
+> >
+> >~~~
+> >`summarise()` has grouped output by 'continent'. You can override using the `.groups` argument.
+> >~~~
+> >{: .output}
+> >
+> >
+> >
+> >~~~
 > > print(lifeExp_bycontinentyear)
 > >~~~
 > >{: .language-r}
@@ -658,9 +672,9 @@ gapminder %>%
 > >
 > >~~~
 > ># A tibble: 60 x 3
-> ># Groups:   continent [?]
+> ># Groups:   continent [5]
 > >   continent  year mean_lifeExp
-> >   <chr>     <int>        <dbl>
+> >   <chr>     <dbl>        <dbl>
 > > 1 Africa     1952         39.1
 > > 2 Africa     1957         41.3
 > > 3 Africa     1962         43.3
@@ -671,7 +685,7 @@ gapminder %>%
 > > 8 Africa     1987         53.3
 > > 9 Africa     1992         53.6
 > >10 Africa     1997         53.6
-> ># ... with 50 more rows
+> ># … with 50 more rows
 > >~~~
 > >{: .output}
 > {: .solution}
@@ -705,7 +719,7 @@ gapminder %>%
 2 Americas   0.960
 3 Asia       1.46 
 4 Europe     0.534
-5 Oceania    0.63 
+5 Oceania    0.630
 ~~~
 {: .output}
 

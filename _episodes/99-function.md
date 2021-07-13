@@ -283,7 +283,7 @@ calc_GDP_and_filter(gapminder, 1997)
 ~~~
 # A tibble: 1,704 x 7
    country      year      pop continent lifeExp gdpPercap          gdp
-   <chr>       <int>    <dbl> <chr>       <dbl>     <dbl>        <dbl>
+   <chr>       <dbl>    <dbl> <chr>       <dbl>     <dbl>        <dbl>
  1 Afghanistan  1952  8425333 Asia         28.8      779.  6567086330.
  2 Afghanistan  1957  9240934 Asia         30.3      821.  7585448670.
  3 Afghanistan  1962 10267083 Asia         32.0      853.  8758855797.
@@ -294,7 +294,7 @@ calc_GDP_and_filter(gapminder, 1997)
  8 Afghanistan  1987 13867957 Asia         40.8      852. 11820990309.
  9 Afghanistan  1992 16317921 Asia         41.7      649. 10595901589.
 10 Afghanistan  1997 22227415 Asia         41.8      635. 14121995875.
-# ... with 1,694 more rows
+# … with 1,694 more rows
 ~~~
 {: .output}
 
@@ -347,7 +347,7 @@ calc_GDP_and_filter(gapminder, 1997)
 ~~~
 # A tibble: 1,704 x 7
    country      year      pop continent lifeExp gdpPercap          gdp
-   <chr>       <int>    <dbl> <chr>       <dbl>     <dbl>        <dbl>
+   <chr>       <dbl>    <dbl> <chr>       <dbl>     <dbl>        <dbl>
  1 Afghanistan  1952  8425333 Asia         28.8      779.  6567086330.
  2 Afghanistan  1957  9240934 Asia         30.3      821.  7585448670.
  3 Afghanistan  1962 10267083 Asia         32.0      853.  8758855797.
@@ -358,7 +358,7 @@ calc_GDP_and_filter(gapminder, 1997)
  8 Afghanistan  1987 13867957 Asia         40.8      852. 11820990309.
  9 Afghanistan  1992 16317921 Asia         41.7      649. 10595901589.
 10 Afghanistan  1997 22227415 Asia         41.8      635. 14121995875.
-# ... with 1,694 more rows
+# … with 1,694 more rows
 ~~~
 {: .output}
 
@@ -403,7 +403,7 @@ calc_GDP_and_filter(gapminder, 1997)
 ~~~
 # A tibble: 142 x 7
    country      year       pop continent lifeExp gdpPercap           gdp
-   <chr>       <int>     <dbl> <chr>       <dbl>     <dbl>         <dbl>
+   <chr>       <dbl>     <dbl> <chr>       <dbl>     <dbl>         <dbl>
  1 Afghanistan  1997  22227415 Asia         41.8      635.  14121995875.
  2 Albania      1997   3428038 Europe       73.0     3193.  10945912519.
  3 Algeria      1997  29072015 Africa       69.2     4797. 139467033682.
@@ -414,7 +414,7 @@ calc_GDP_and_filter(gapminder, 1997)
  8 Bahrain      1997    598561 Asia         73.9    20292.  12146009862.
  9 Bangladesh   1997 123315288 Asia         59.4      973. 119957417048.
 10 Belgium      1997  10199787 Europe       77.5    27561. 281118335091.
-# ... with 132 more rows
+# … with 132 more rows
 ~~~
 {: .output}
 
@@ -492,7 +492,7 @@ calc_GDP_and_filter(gap_noyear, 1997)
  8 Afghanistan 13867957 Asia         40.8      852. 11820990309.
  9 Afghanistan 16317921 Asia         41.7      649. 10595901589.
 10 Afghanistan 22227415 Asia         41.8      635. 14121995875.
-# ... with 1,694 more rows
+# … with 1,694 more rows
 ~~~
 {: .output}
 
@@ -529,7 +529,7 @@ calc_GDP_and_filter(gapminder, 1997)
 ~~~
 # A tibble: 142 x 7
    country      year       pop continent lifeExp gdpPercap           gdp
-   <chr>       <int>     <dbl> <chr>       <dbl>     <dbl>         <dbl>
+   <chr>       <dbl>     <dbl> <chr>       <dbl>     <dbl>         <dbl>
  1 Afghanistan  1997  22227415 Asia         41.8      635.  14121995875.
  2 Albania      1997   3428038 Europe       73.0     3193.  10945912519.
  3 Algeria      1997  29072015 Africa       69.2     4797. 139467033682.
@@ -540,7 +540,7 @@ calc_GDP_and_filter(gapminder, 1997)
  8 Bahrain      1997    598561 Asia         73.9    20292.  12146009862.
  9 Bangladesh   1997 123315288 Asia         59.4      973. 119957417048.
 10 Belgium      1997  10199787 Europe       77.5    27561. 281118335091.
-# ... with 132 more rows
+# … with 132 more rows
 ~~~
 {: .output}
 
@@ -554,7 +554,9 @@ calc_GDP_and_filter(gap_noyear, 1997)
 
 
 ~~~
-Error in filter_impl(.data, quo): Evaluation error: Column `year` not found in `.data`.
+Error: Problem with `filter()` input `..1`.
+ℹ Input `..1` is `.data$year == 1997`.
+✖ Column `year` not found in `.data`
 ~~~
 {: .error}
 
@@ -585,7 +587,7 @@ As you can see, we've also used the `.data` pronoun when calculating the GDP; if
 > > ~~~
 > > # A tibble: 1 x 7
 > >   country         year      pop continent lifeExp gdpPercap     gdp
-> >   <chr>          <int>    <dbl> <chr>       <dbl>     <dbl>   <dbl>
+> >   <chr>          <dbl>    <dbl> <chr>       <dbl>     <dbl>   <dbl>
 > > 1 United Kingdom  2007 60776238 Europe       79.4    33203. 2.02e12
 > > ~~~
 > > {: .output}

@@ -1034,8 +1034,8 @@ month.name[c(1,1,2,3,4)]
 > > 
 > > 
 > > ~~~
-> >  [1] "z" "y" "x" "w" "v" "u" "t" "s" "r" "q" "p" "o" "n" "m" "l" "k" "j"
-> > [18] "i" "h" "g" "f" "e" "d" "c" "b" "a"
+> >  [1] "z" "y" "x" "w" "v" "u" "t" "s" "r" "q" "p" "o" "n" "m" "l" "k" "j" "i" "h"
+> > [20] "g" "f" "e" "d" "c" "b" "a"
 > > ~~~
 > > {: .output}
 > > 
@@ -1055,8 +1055,8 @@ month.name[c(1,1,2,3,4)]
 > > 
 > > 
 > > ~~~
-> >  [1] "z" "y" "x" "w" "v" "u" "t" "s" "r" "q" "p" "o" "n" "m" "l" "k" "j"
-> > [18] "i" "h" "g" "f" "e" "d" "c" "b" "a"
+> >  [1] "z" "y" "x" "w" "v" "u" "t" "s" "r" "q" "p" "o" "n" "m" "l" "k" "j" "i" "h"
+> > [20] "g" "f" "e" "d" "c" "b" "a"
 > > ~~~
 > > {: .output}
 > > 
@@ -1137,9 +1137,8 @@ month.name[-2]
 
 
 ~~~
- [1] "January"   "March"     "April"     "May"       "June"     
- [6] "July"      "August"    "September" "October"   "November" 
-[11] "December" 
+ [1] "January"   "March"     "April"     "May"       "June"      "July"     
+ [7] "August"    "September" "October"   "November"  "December" 
 ~~~
 {: .output}
 
@@ -1154,8 +1153,8 @@ month.name[c(-1, -5)]  # or month.name[-c(1,5)]
 
 
 ~~~
- [1] "February"  "March"     "April"     "June"      "July"     
- [6] "August"    "September" "October"   "November"  "December" 
+ [1] "February"  "March"     "April"     "June"      "July"      "August"   
+ [7] "September" "October"   "November"  "December" 
 ~~~
 {: .output}
 
