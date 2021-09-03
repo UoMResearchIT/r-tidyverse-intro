@@ -355,7 +355,19 @@ information.  Note that the variable we are faceting by needs to be placed in qu
 > ## Aside: Interactively exploring graphs
 > 
 > There are some outlying data points in the solution to challenge 3.  You might be wondering which country these belong to.  Unfortunately there
-> isn't an easy way of doing this neatly in ggplot2.  One approach is to use `geom_text()` to label each data point with the country (this uses the `label` aesthetic to select which variable in the data to use as the label):
+> isn't an easy way of doing this neatly in ggplot2.
+> 
+> It is possible to use an additional library called plotly to convert a ggplot 
+> graph to a plotly graph. This is interactive, and will  let you zoom in on areas of interest
+> and hover over points to see a tooltip containing their values.
+> 
+> To do this, make your graph, and then run `library(plotly)` to load the plotly
+> library and `ggplotly()` to convert the most recent ggplot graph to a plotly graph.
+> 
+> (If you don't have the plotly library installed on your machine, you can install
+> it with `install.packages("plotly")`)
+> 
+> A pure ggplot2 approach is to use `geom_text()` to label each data point with the country (this uses the `label` aesthetic to select which variable in the data to use as the label):
 > 
 > 
 > ~~~
@@ -373,7 +385,6 @@ information.  Note that the variable we are faceting by needs to be placed in qu
 > 
 > The labels for each data point overlap each other, and are plotted for each data point.  You can deal with the latter issue by creating a new variable which only contains the label for one point per group (i.e per country), and for the groups you wish to label.  You can do this using `mutate` and `ifelse` as described at the end of the previous episode.
 > 
-> It's also possible to make a graph with "tooltips", so that the country pops up when you hover the mouse over a line.  `ggplot2` can't do this automatically, but an extension package [ggiraph`](https://davidgohel.github.io/ggiraph/index.html) provides this functionality.  The package's documentation has full examples.
 > 
 {: .callout}
 
