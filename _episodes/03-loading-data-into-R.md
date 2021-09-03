@@ -66,6 +66,30 @@ cols(
 
 We see that the `read_csv()` table reports a "column specification".  This shows the variable names that were read in, and the type of data that each column was interpreted as.
 
+> ## New versions of readr
+>
+> Newer versions of readr don't report the full column specification when
+> you load a file.    The `spec()` function will show you the full 
+> column specification:
+> ~~~
+> spec(cats)
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> ~~~
+> cols(
+>   coat = col_character(),
+>   weight = col_double(),
+>   likes_string = col_double()
+> )
+> ~~~
+> {: .output}
+{: .callout}
+
+## Previewing data
+
 
 ~~~
 cats
@@ -75,7 +99,7 @@ cats
 
 
 ~~~
-# A tibble: 3 x 3
+# A tibble: 3 × 3
   coat   weight likes_string
   <chr>   <dbl>        <dbl>
 1 calico    2.1            1
@@ -219,7 +243,7 @@ cats[1:2,2:3]
 
 
 ~~~
-# A tibble: 2 x 2
+# A tibble: 2 × 2
   weight likes_string
    <dbl> <lgl>       
 1    2.1 TRUE        
@@ -238,7 +262,7 @@ cats[1,]
 
 
 ~~~
-# A tibble: 1 x 3
+# A tibble: 1 × 3
   coat   weight likes_string
   <chr>   <dbl> <lgl>       
 1 calico    2.1 TRUE        
@@ -255,7 +279,7 @@ cats[,1]
 
 
 ~~~
-# A tibble: 3 x 1
+# A tibble: 3 × 1
   coat  
   <chr> 
 1 calico
@@ -289,7 +313,7 @@ cats[,1]
 
 
 ~~~
-# A tibble: 3 x 1
+# A tibble: 3 × 1
   coat  
   <chr> 
 1 calico
@@ -398,7 +422,7 @@ row col           expected actual
 ~~~
 [1] <NA>  black tabby
 attr(,"problems")
-# A tibble: 1 x 4
+# A tibble: 1 × 4
     row   col expected           actual
   <int> <int> <chr>              <chr> 
 1     1    NA value in level set calic0
@@ -432,7 +456,7 @@ take this idea a step further, and define `coat` as a factor when we load the da
 > > 
 > > 
 > > ~~~
-> > # A tibble: 3 x 3
+> > # A tibble: 3 × 3
 > >   coat   weight likes_string
 > >   <fct>   <dbl> <lgl>       
 > > 1 calico    2.1 TRUE        

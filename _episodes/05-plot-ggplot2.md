@@ -580,7 +580,7 @@ gapminder %>%
 > > 
 > > 
 > > ~~~
-> > # A tibble: 82 x 6
+> > # A tibble: 82 × 6
 > >    country                 year      pop continent lifeExp gdpPercap
 > >    <chr>                  <dbl>    <dbl> <chr>       <dbl>     <dbl>
 > >  1 Albania                 2007  3600523 Europe       76.4     5937.

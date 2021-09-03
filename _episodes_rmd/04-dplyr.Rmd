@@ -34,6 +34,13 @@ library("tidyverse")
 gapminder <- read_csv("./data/gapminder-FiveYearData.csv")
 ```
 
+> ## New versions of readr 
+> 
+> Remember that you may need to use the `spec()` function to show the full
+> column specification if you are using a newer version of readr
+> i.e. `spec(gapminder)`
+{: .callout}
+
 As we discussed in the [previous episode]({{ page.root }}/03-loading-data-into-R), variables in R can be character, integer, double, etc.   A tibble (and R's built in equivalent; the data-frame) require that all the values in a particular column have the same data type.  The `read_csv()` function will attempt to infer the data type of each column, and prints the column types it has guessed to the screen.  If the wrong column types have been generated, you can pass the `col_types=` option to `read_csv()`.  
 
 For example, if we wanted to load the `pop` column as a character string, we would use:

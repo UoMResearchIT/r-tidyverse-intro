@@ -66,6 +66,30 @@ cats <- read_csv(file = "data/feline-data.csv")
 
 We see that the `read_csv()` table reports a "column specification".  This shows the variable names that were read in, and the type of data that each column was interpreted as.
 
+> ## New versions of readr
+>
+> Newer versions of readr don't report the full column specification when
+> you load a file.    The `spec()` function will show you the full 
+> column specification:
+> ~~~
+> spec(cats)
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> ~~~
+> cols(
+>   coat = col_character(),
+>   weight = col_double(),
+>   likes_string = col_double()
+> )
+> ~~~
+> {: .output}
+{: .callout}
+
+## Previewing data
+
 ```{r}
 cats
 ```

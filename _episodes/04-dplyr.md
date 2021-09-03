@@ -35,7 +35,7 @@ library("tidyverse")
 
 
 ~~~
-── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 ~~~
 {: .output}
 
@@ -43,7 +43,7 @@ library("tidyverse")
 
 ~~~
 ✔ ggplot2 3.3.5     ✔ purrr   0.3.4
-✔ tibble  3.1.2     ✔ dplyr   1.0.7
+✔ tibble  3.1.4     ✔ dplyr   1.0.7
 ✔ tidyr   1.1.3     ✔ stringr 1.4.0
 ✔ readr   1.4.0     ✔ forcats 0.5.1
 ~~~
@@ -80,6 +80,13 @@ cols(
 )
 ~~~
 {: .output}
+
+> ## New versions of readr 
+> 
+> Remember that you may need to use the `spec()` function to show the full
+> column specification if you are using a newer version of readr
+> i.e. `spec(gapminder)`
+{: .callout}
 
 As we discussed in the [previous episode]({{ page.root }}/03-loading-data-into-R), variables in R can be character, integer, double, etc.   A tibble (and R's built in equivalent; the data-frame) require that all the values in a particular column have the same data type.  The `read_csv()` function will attempt to infer the data type of each column, and prints the column types it has guessed to the screen.  If the wrong column types have been generated, you can pass the `col_types=` option to `read_csv()`.  
 
@@ -147,7 +154,7 @@ print(year_country_gdp)
 
 
 ~~~
-# A tibble: 1,704 x 3
+# A tibble: 1,704 × 3
     year country     gdpPercap
    <dbl> <chr>           <dbl>
  1  1952 Afghanistan      779.
@@ -181,7 +188,7 @@ print(gapminder_Europe)
 
 
 ~~~
-# A tibble: 360 x 6
+# A tibble: 360 × 6
    country  year     pop continent lifeExp gdpPercap
    <chr>   <dbl>   <dbl> <chr>       <dbl>     <dbl>
  1 Albania  1952 1282697 Europe       55.2     1601.
@@ -247,7 +254,7 @@ print(year_country_gdp)
 
 
 ~~~
-# A tibble: 1,704 x 3
+# A tibble: 1,704 × 3
     year country     gdpPercap
    <dbl> <chr>           <dbl>
  1  1952 Afghanistan      779.
@@ -285,7 +292,7 @@ print(year_country_gdp_euro)
 
 
 ~~~
-# A tibble: 360 x 3
+# A tibble: 360 × 3
     year country gdpPercap
    <dbl> <chr>       <dbl>
  1  1952 Albania     1601.
@@ -411,7 +418,7 @@ gapminder %>%
 
 
 ~~~
-# A tibble: 30 x 6
+# A tibble: 30 × 6
    country                 year     pop continent lifeExp gdpPercap
    <chr>                  <dbl>   <dbl> <chr>       <dbl>     <dbl>
  1 Iceland                 2007  301931 Europe       81.8    36181.
@@ -440,7 +447,7 @@ gapminder %>%
 
 
 ~~~
-# A tibble: 30 x 6
+# A tibble: 30 × 6
    country         year      pop continent lifeExp gdpPercap
    <chr>          <dbl>    <dbl> <chr>       <dbl>     <dbl>
  1 Germany         2007 82400996 Europe       79.4    32170.
@@ -482,7 +489,7 @@ gapminder %>%
 
 
 ~~~
-# A tibble: 1,704 x 7
+# A tibble: 1,704 × 7
    country      year      pop continent lifeExp gdpPercap logGdpPercap
    <chr>       <dbl>    <dbl> <chr>       <dbl>     <dbl>        <dbl>
  1 Afghanistan  1952  8425333 Asia         28.8      779.         6.66
@@ -529,7 +536,7 @@ The dplyr cheat sheet contains many useful functions which can be used with dply
 > > 
 > > 
 > > ~~~
-> > # A tibble: 30 x 3
+> > # A tibble: 30 × 3
 > >    country                lifeExp  rank
 > >    <chr>                    <dbl> <int>
 > >  1 Albania                   76.4    11
@@ -592,7 +599,7 @@ gapminder %>%
 
 
 ~~~
-# A tibble: 1 x 1
+# A tibble: 1 × 1
   meanlife
      <dbl>
 1     67.0
@@ -614,7 +621,7 @@ gapminder %>%
 
 
 ~~~
-# A tibble: 5 x 2
+# A tibble: 5 × 2
   continent meanlife
   <chr>        <dbl>
 1 Africa        54.8
@@ -671,7 +678,7 @@ gapminder %>%
 > >
 > >
 > >~~~
-> ># A tibble: 60 x 3
+> ># A tibble: 60 × 3
 > ># Groups:   continent [5]
 > >   continent  year mean_lifeExp
 > >   <chr>     <dbl>        <dbl>
@@ -712,7 +719,7 @@ gapminder %>%
 
 
 ~~~
-# A tibble: 5 x 2
+# A tibble: 5 × 2
   continent se_pop
   <chr>      <dbl>
 1 Africa     1.33 
@@ -739,7 +746,7 @@ gapminder %>%
 
 
 ~~~
-# A tibble: 5 x 2
+# A tibble: 5 × 2
   continent     n
   <chr>     <int>
 1 Africa       52

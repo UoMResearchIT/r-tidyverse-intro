@@ -280,7 +280,7 @@ calc_GDP_and_filter(gapminder, 1997)
 
 
 ~~~
-# A tibble: 1,704 x 7
+# A tibble: 1,704 × 7
    country      year      pop continent lifeExp gdpPercap          gdp
    <chr>       <dbl>    <dbl> <chr>       <dbl>     <dbl>        <dbl>
  1 Afghanistan  1952  8425333 Asia         28.8      779.  6567086330.
@@ -339,7 +339,7 @@ calc_GDP_and_filter(gapminder, 1997)
 
 
 ~~~
-# A tibble: 142 x 7
+# A tibble: 142 × 7
    country      year       pop continent lifeExp gdpPercap           gdp
    <chr>       <dbl>     <dbl> <chr>       <dbl>     <dbl>         <dbl>
  1 Afghanistan  1997  22227415 Asia         41.8      635.  14121995875.
@@ -389,7 +389,7 @@ calc_GDP_and_filter(gapminder, 1997)
 > > 
 > > 
 > > ~~~
-> > # A tibble: 1 x 7
+> > # A tibble: 1 × 7
 > >   country         year      pop continent lifeExp gdpPercap     gdp
 > >   <chr>          <dbl>    <dbl> <chr>       <dbl>     <dbl>   <dbl>
 > > 1 United Kingdom  2007 60776238 Europe       79.4    33203. 2.02e12
