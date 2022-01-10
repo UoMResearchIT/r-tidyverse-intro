@@ -335,6 +335,10 @@ This makes the systematic difference between our model's predictions and reality
 
 This episode has barely scratched the surface of model fitting in R.  Fortunately most of the more complex models we can fit in R have a similar interface to `lm()`, so the process of fitting and checking is similar.
 
+The book [R for Data Science](https://r4ds.had.co.nz/), which this section is 
+based on, is a very useful resource, and is freely available.
+The content is regularly updated to reflect current good practice.
+
 [Quick R](https://www.statmethods.net/) provides a good overview of various [standard statistical models](https://www.statmethods.net/stats/index.html) and [more advanced statistical models](https://www.statmethods.net/advstats/index.html).   
 
 If you wish to fit Bayesian models in R, [RStan](http://mc-stan.org/users/interfaces/rstan) provides an interface to the [Stan](http://mc-stan.org) programming language.  The [rstanarm](https://cran.r-project.org/web/packages/rstanarm/index.html) package provides an `lm()` like interface to many common statistical models implemented in Stan, letting you fit a Bayesian model without having to code it from scratch.
