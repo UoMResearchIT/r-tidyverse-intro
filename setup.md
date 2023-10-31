@@ -20,7 +20,7 @@ To install R and RStudio on a University managed windows machine, go to Software
 
 If this is you, we recommend that you either:
 
-+  Log on to a University of Manchester cluster remotely. Follow the instructions [here](https://www.itservices.manchester.ac.uk/students/pc-on-campus/remote-cluster-access/) and choose `Sackville Desktop G11` (R/R Studio are installed).
++  Log on to a University of Manchester Cluster PC. RStudio is available in most computer clusters including the Main Library, AGLC, Stopford and AMBS.
 
 +  Use [_R Studio Cloud_](https://login.rstudio.cloud/) (an online version of _RStudio_). This service is not associated with the University of Manchester. You should take care to ensure that you only sign up for a free account.
 
