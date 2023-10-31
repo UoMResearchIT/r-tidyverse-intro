@@ -14,7 +14,7 @@ This lesson assumes you have the _R_ and _Rstudio_ software installed on your co
 2.  _Rstudio_ is an environment for code development using _R_. It can be downloaded [here](https://www.rstudio.com/products/rstudio/download/). You will need the Desktop version for your computer; scroll to the bottom of the page for links.
 
 #### University Managed Laptop (Windows)
-To install R and RStudio on a University managed windows machine, go to Software Centre to install: `R (4.2.3)`, `Rtools`, and `R Studio`
+To install R and RStudio on a University managed windows machine, connect your computer to the university network and open the Software Centre from the Start Menu, then search for and install Rstudio. This will also automatically install R for Windows 4.3.1 and Rtools. R packages are installed onto your P drive, therefore make sure your P drive can be opened and has free space available.
 
 #### 😱 Help! It is the Day 1 of the course and I didn't install R/R Studio
 
