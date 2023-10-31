@@ -22,7 +22,7 @@ If this is you, we recommend that you either:
 
 +  Log on to a University of Manchester Cluster PC. RStudio is available in most computer clusters including the Main Library, AGLC, Stopford and AMBS.
 
-+  Use [_R Studio Cloud_](https://login.rstudio.cloud/) (an online version of _RStudio_). This service is not associated with the University of Manchester. You should take care to ensure that you only sign up for a free account.
++  Sign up and create an account on [_R Studio Cloud_](https://login.rstudio.cloud/) (a cloud based version of _RStudio_) which will allow you to use Rstudio in any web browser without requiring any installation. The free account provides about 15 hours of computing time per month. This service is not associated with the University of Manchester. You should take care to ensure that you only sign up for a free account. To upload your dataset, use the Upload button at the Files tab on the bottom right window.
 
 ## Packages
 
