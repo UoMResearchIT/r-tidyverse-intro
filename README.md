@@ -1,6 +1,9 @@
 R for Data Analysis 
 ======================================
 
+**UPDATE August 2025: This course is no longer active so the training matrial website has been shut down and this repository is archived. Please contact the [RSE team](https://research-it.manchester.ac.uk/services/research-software-engineering/) for more information**
+
+
 An introduction to R for non-programmers using the [Gapminder][gapminder] data and the tidyverse.
 
 This course is based on the [Software Carpentry](https://software-carpentry.org/) course, and has been abridged and modified. The most substantive changes are:
